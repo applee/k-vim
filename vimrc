@@ -686,5 +686,6 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 
-
-
+" added by applee
+set clipboard=unnamed
+set colorcolumn=80
