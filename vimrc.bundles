@@ -17,7 +17,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'nginx', 'golang', 'ruby', 'less', 'php', 'coffeescript', 'shell']
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'golang']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'json', 'shell', 'golang']
 endif
 
 " ----------------------------------------------------------------------------
@@ -441,6 +441,8 @@ call plug#end()
 
 " delimitMate {{{
     " for python docstring ",优化输入
+    let delimitMate_expand_cr = 1
+    let delimitMate_expand_space = 1
     au FileType python let b:delimitMate_nesting_quotes = ['"']
     au FileType php let delimitMate_matchpairs = "(:),[:],{:}"
     " 关闭某些类型文件的自动补全
@@ -503,16 +505,16 @@ call plug#end()
 " expandregion {{{
     " map + <Plug>(expand_region_expand)
     " map _ <Plug>(expand_region_shrink)
-    vmap v <Plug>(expand_region_expand)
-    vmap V <Plug>(expand_region_shrink)
-    " Extend the global default
-    call expand_region#custom_text_objects({
-      \ 'a]' :1,
-      \ 'ab' :1,
-      \ 'aB' :1,
-      \ 'ii' :0,
-      \ 'ai' :0,
-      \ })
+    " vmap v <Plug>(expand_region_expand)
+    " vmap V <Plug>(expand_region_shrink)
+    " " Extend the global default
+    " call expand_region#custom_text_objects({
+      " \ 'a]' :1,
+      " \ 'ab' :1,
+      " \ 'aB' :1,
+      " \ 'ii' :0,
+      " \ 'ai' :0,
+      " \ })
 " }}}
 
 " multiplecursors {{{
@@ -709,8 +711,8 @@ call plug#end()
 " tagbar {{{
     nmap <F9> :TagbarToggle<CR>
     let g:tagbar_autofocus = 1
-    " let g:tagbar_autoshowtag = 1
-    " let g:tagbar_show_visibility = 1
+    let g:tagbar_autoshowtag = 1
+    let g:tagbar_show_visibility = 1
     " for ruby
     let g:tagbar_type_ruby = {
         \ 'kinds' : [
@@ -791,8 +793,9 @@ call plug#end()
     let g:go_fmt_fail_silently = 1
     " format with goimports instead of gofmt
     let g:go_fmt_command = "goimports"
-    let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-    let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go', 'java'] }
+    let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
+    " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go', 'java'] }
+    let g:go_list_type = "quickfix"
 " }}}
 
 " markdown {{{
