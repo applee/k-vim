@@ -689,4 +689,4 @@ highlight SpellLocal term=underline cterm=underline
 
 " added by applee
 set clipboard=unnamed
-set colorcolumn=80
+set colorcolumn=80,120

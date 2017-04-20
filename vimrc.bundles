@@ -17,7 +17,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'nginx', 'golang', 'ruby', 'less', 'php', 'coffeescript', 'shell']
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'json', 'shell', 'golang']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'json', 'shell', 'golang', 'protobuf']
 endif
 
 " ----------------------------------------------------------------------------
@@ -176,6 +176,10 @@ if count(g:bundle_groups, 'golang')
     " 2. :GoInstallBinaries
     " vimgo  https://github.com/fatih/vim-go
     Plug 'fatih/vim-go', {'for': 'go'}
+endif
+
+if count(g:bundle_groups, 'protobuf')
+    Plug 'uarun/vim-protobuf'
 endif
 
 
@@ -713,6 +717,7 @@ call plug#end()
     let g:tagbar_autofocus = 1
     let g:tagbar_autoshowtag = 1
     let g:tagbar_show_visibility = 1
+    let g:tagbar_width = 35
     " for ruby
     let g:tagbar_type_ruby = {
         \ 'kinds' : [
@@ -837,5 +842,3 @@ call plug#end()
     " setenv PYTHONIOENCODING UTF-8
     " nnoremap <leader>y :call Yapf()<cr>
 " }}}
-
-"------------------------------------------- end of configs --------------------------------------------
