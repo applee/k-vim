@@ -304,6 +304,10 @@ call plug#end()
     let g:syntastic_check_on_wq=0
     let g:syntastic_enable_highlighting=1
 
+    " gcc
+    let g:syntastic_c_include_dirs = ['include', '../include']
+    let g:syntastic_c_auto_refresh_includes = 1 
+
     " checkers
     " 最轻量
     " let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes
