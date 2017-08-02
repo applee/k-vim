@@ -26,6 +26,7 @@
 " 修改leader键
 let mapleader = ','
 let g:mapleader = ','
+let g:BASH_Ctrl_j = 'off'
 
 " 开启语法高亮
 syntax on
