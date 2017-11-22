@@ -564,6 +564,7 @@ nnoremap U <C-r>
 " nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " edit vimrc/zshrc and load vimrc bindings
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>evb :vsp $MYVIMRC.bundles<CR>
 nnoremap <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
@@ -629,7 +630,7 @@ endif
 
 " beta
 " https://dougblack.io/words/a-good-vimrc.html
-set lazyredraw          " redraw only when we need to.
+" set lazyredraw          " redraw only when we need to.
 
 
 "==========================================
